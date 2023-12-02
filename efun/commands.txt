@@ -1,7 +1,30 @@
 Commands typed in terminal
 
-
+pip install scrapy
 
 scrapy startproject efun
 
 scrapy genspider efunspider https://www.toronto.ca/data/parks/prd/skating/reg/learn/index.html
+
+pip install ipython
+
+scrapy shell
+
+fetch('https://www.toronto.ca/data/parks/prd/skating/reg/learn/index.html')
+
+response
+
+response.css('title.list-group-item')
+
+response.css('.list-group-item')
+
+fetch('https://efun.toronto.ca/torontofun/Activities/ActivitiesDetails.asp?ProcessWait=N&aid=9936')
+
+view(response)
+
+entries = response.css('#activity-course-row')
+entries[0].get()
+
+activity_links = response.css('#activity-course-row .text-bold a::attr(href)')
+
+barcodes = response.xpath('//*[@id="activity-course-row"]/td[2]/text()').getall()
