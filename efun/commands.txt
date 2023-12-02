@@ -1,0 +1,7 @@
+Commands typed in terminal
+
+
+
+scrapy startproject efun
+
+scrapy genspider efunspider https://www.toronto.ca/data/parks/prd/skating/reg/learn/index.html
