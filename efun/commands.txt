@@ -28,3 +28,17 @@ entries[0].get()
 activity_links = response.css('#activity-course-row .text-bold a::attr(href)')
 
 barcodes = response.xpath('//*[@id="activity-course-row"]/td[2]/text()').getall()
+
+days = response.xpath('//*[@id="activity-course-row"]/td[3]/text()').getall()
+initialTimes = response.xpath('//*[@id="activity-course-row"]/td[4]/text()').getall()
+initialDates = response.xpath('//*[@id="activity-course-row"]/td[5]/text()').getall()
+locations = response.xpath('//*[@id="activity-course-row"]/td[6]/a/text()').getall() # two adress
+
+
+        activity_links = response.css('#activity-course-row .text-bold a::attr(href)')
+        barcodes = response.xpath('//*[@id="activity-course-row"]/td[2]/text()').getall()
+        days = response.xpath('//*[@id="activity-course-row"]/td[3]/text()').getall()
+        initialTimes = response.xpath('//*[@id="activity-course-row"]/td[4]/text()').getall()
+        locations = response.xpath('//*[@id="activity-course-row"]/td[6]/a/text()').getall()
+
+scrapy crawl efunspider
